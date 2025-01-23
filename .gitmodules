@@ -1,0 +1,4 @@
+[submodule "external/async-opcua"]
+	path = external/async-opcua
+	url = https://github.com/FreeOpcUa/async-opcua
+	branch = improve-code-gen-error-context

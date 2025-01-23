@@ -1,0 +1,41 @@
+extra_header: |
+  // OPCUA for Rust
+  // SPDX-License-Identifier: MPL-2.0
+  // Copyright (C) 2017-2024 Einar Omang
+targets:
+  - type: types
+    file_path: EUROMAP/EUROMAP_83/Opc.Ua.PlasticsRubber.GeneralTypes.NodeSet2.bsd
+    output_dir: src/generated/types/OPCUA/EUROMAP83
+    extra_header: |
+      #![allow(non_camel_case_types)]
+      #![allow(clippy::upper_case_acronyms)]
+  - type: types
+    file_path: EUROMAP/EUROMAP_79/Opc.Ua.PlasticsRubber.ImmToRobot.bsd
+    output_dir: src/generated/types/OPCUA/EUROMAP79
+  - type: types
+    file_path: EUROMAP/EUROMAP_82_2/Opc.Ua.PlasticsRubber.HotRunner.NodeSet2.bsd
+    output_dir: src/generated/types/OPCUA/EUROMAP82_2
+    extra_header: |
+      #![allow(non_camel_case_types)]
+      #![allow(clippy::upper_case_acronyms)]
+
+  - type: nodes
+    name: EUROMAP83
+    file_path: EUROMAP/EUROMAP_83/Opc.Ua.PlasticsRubber.GeneralTypes.NodeSet2.xml
+    output_dir: src/generated/nodes/OPCUA/EUROMAP83
+    max_nodes_per_file: 10000
+    own_namespaces:
+      - "http://opcfoundation.org/UA/PlasticsRubber/GeneralTypes/"
+      - "http://www.euromap.org/euromap83/"
+    imported_namespaces:
+      - "http://opcfoundation.org/UA/DI/"
+      - "http://opcfoundation.org/UA/"
+    types:
+      # - file_path: EUROMAP/EUROMAP_77/Opc.Ua.PlasticsRubber.IMM2MES.NodeSet2.xsd
+      #  root_path: opcua::types
+      - file_path: EUROMAP/EUROMAP_83/Opc.Ua.PlasticsRubber.GeneralTypes.NodeSet2.xsd
+        root_path: opcua::types
+      - file_path: EUROMAP/EUROMAP_79/Opc.Ua.PlasticsRubber.ImmToRobot.xsd
+        root_path: opcua::types
+      - file_path: external/rust-opcua/schemas/1.05/Opc.Ua.Types.xsd
+        root_path: opcua::types
