@@ -32,8 +32,15 @@ Currently, the submodule is pinned to the `improve-code-gen-error-context` branc
 
 [Master (1 commit behind PR)](https://github.com/FreeOpcUa/async-opcua/commit/885c3bb6c525b2665e07b14bfacfa35f76c8cbaa)
 
-When invoking code generation using the steps outlined above, this error is returned:
+
+### CodeGenError
+When invoking code generation using the steps outlined above, this error is returned
+(Error has been slightly formatted for readability)
 ```
-Error: Other("Unsupported content type of type DataSetMetaDataType")
+Error: CodeGenError {
+    kind: Other("Unsupported content type of type DataSetMetaDataType"),
+    context: Some("generating node ns=1;i=6104"),
+    file: Some("EUROMAP/EUROMAP_79/Opc.Ua.PlasticsRubber.ImmToRobot.xml")
+}
 ```
 ___
